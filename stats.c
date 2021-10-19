@@ -7,22 +7,30 @@ int ledAlertCallCount = 0;
 struct Stats compute_statistics(const float* numberset, int setlength) {
     struct Stats s;
     int i;
-    s.average = 0;
-    s.min = 0;
-    s.max = 0;
+    s.average = NAN;
+    s.min = NAN;
+    s.max = NAN;
     static float average=0;
-    for(i =0 ; i<setlength ; i++)
+    if(0 != setlength)
     {
-        if(s.min > numberset[i])
+        for(i =0 ; i<setlength ; i++)
         {
-            s.min= numberset[i];
+            if(s.min > numberset[i])
+            {
+                s.min= numberset[i];
+            }
+            if(s.max < numberset[i])
+            {
+                s.max= numberset[i];
+            }
+            average+=numberset[i];
         }
-        if(s.max < numberset[i])
-        {
-            s.max= numberset[i];
-        }
-        average+=numberset[i];
+        average/=setlength;
+        return s;
     }
-    average/=setlength;
+    else
+    {
+        return s;
+    }
     
 }
