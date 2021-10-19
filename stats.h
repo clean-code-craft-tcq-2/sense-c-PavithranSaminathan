@@ -10,7 +10,7 @@ struct Stats
 
 struct Stats compute_statistics(const float* numberset, int setlength);
 
-typedef void (*alerter_funcptr)();
+typedef void (*alerter_funcptr)(float maxThreshold, struct Stats computedStats);
 
 void emailAlerter(float maxThreshold, struct Stats computedStats);
 void ledAlerter(float maxThreshold, struct Stats computedStats);
