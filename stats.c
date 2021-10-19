@@ -23,8 +23,8 @@ void ledAlerter(float maxThreshold,struct Stats computedStats)
 
 void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats)
 {
-    alerter[0](maxThreshold,computedStats);
-    alerter[1](maxThreshold,computedStats);
+    alerters[0](maxThreshold,computedStats);
+    alerters[1](maxThreshold,computedStats);
 }
 struct Stats compute_statistics(const float* numberset, int setlength)
 {
