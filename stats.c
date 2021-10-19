@@ -50,7 +50,7 @@ struct Stats compute_statistics(const float* numberset, int setlength)
             average+=numberset[i];
         }
         average/=setlength;
-        check_and_alert(maxThreshold,&alerters,s);
+        check_and_alert(maxThreshold,alerters,s);
         return s;
     }
     else
