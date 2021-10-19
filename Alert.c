@@ -2,10 +2,16 @@
 
 void emailAlerter()
 {
- emailAlertCallCount=1; 
-}
+  if(computedStats.max > maxThreshold)
+  {
+    emailAlertCallCount=1;
+  }
+ }
 
 void ledAlerter()
 {
-ledAlertCallCount=1;
+ if(computedStats.max > maxThreshold)
+  {
+   ledAlertCallCount=1;
+  }
 }
