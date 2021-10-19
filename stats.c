@@ -30,7 +30,7 @@ struct Stats compute_statistics(const float* numberset, int setlength)
 {
     struct Stats s;
     int i;
-    float maxThreshold;
+    float maxThreshold=10.5;
     s.average = NAN;
     s.min = NAN;
     s.max = NAN;
