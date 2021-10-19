@@ -36,3 +36,18 @@ struct Stats compute_statistics(const float* numberset, int setlength)
     }
     
 }
+void emailAlerter()
+{
+  if(computedStats.max > maxThreshold)
+  {
+    emailAlertCallCount=1;
+  }
+ }
+
+void ledAlerter()
+{
+ if(computedStats.max > maxThreshold)
+  {
+   ledAlertCallCount=1;
+  }
+}
