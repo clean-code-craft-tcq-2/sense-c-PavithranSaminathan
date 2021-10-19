@@ -30,6 +30,7 @@ struct Stats compute_statistics(const float* numberset, int setlength)
 {
     struct Stats s;
     int i;
+    float maxThreshold;
     s.average = NAN;
     s.min = NAN;
     s.max = NAN;
@@ -49,7 +50,7 @@ struct Stats compute_statistics(const float* numberset, int setlength)
             average+=numberset[i];
         }
         average/=setlength;
-        check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats);
+        check_and_alert(maxThreshold,alerters[],computedStats);
         return s;
     }
     else
