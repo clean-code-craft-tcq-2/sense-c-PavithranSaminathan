@@ -62,7 +62,7 @@ struct Stats compute_statistics(const float* numberset, int setlength)
     {
     s.min =NAN;
     s.max = NAN; 
-    s.average=nanf;
+    s.average=(float)nanf;
     printf("d=%f",s.average);
     return s;
     }
