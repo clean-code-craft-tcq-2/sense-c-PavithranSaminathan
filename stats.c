@@ -35,8 +35,8 @@ struct Stats compute_statistics(const float* numberset, int setlength)
     s.average = 0;
     s.min = numberset[0];
     s.max = numberset[0];
-    if(0 != setlength)
-    {
+    //if(0 != setlength)
+    //{
         for(i =0 ; i<setlength ; i++)
         {
             if(s.min > numberset[i])
@@ -53,13 +53,13 @@ struct Stats compute_statistics(const float* numberset, int setlength)
         //alerter_funcptr alerters[] = {emailAlerter, ledAlerter};
         //check_and_alert(maxThreshold,alerters,s);
         return s;
-    }
-    else
-    {
-    s.average = NAN;
-    s.min = NAN;
-    s.max = NAN;
-    return s;
-    }
+    //}
+   // else
+   // {
+   // s.average = NAN;
+   // s.min = NAN;
+   // s.max = NAN;
+   // return s;
+   // }
     
 }
