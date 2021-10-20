@@ -4,7 +4,7 @@
 int emailAlertCallCount = 0;
 int ledAlertCallCount = 0;
 float maxThreshold=0;
-struct Stats computedStats;
+//struct Stats computedStats;
 void emailAlerter(float Threshold,struct Stats computedStats)
 {
   if(computedStats.max > Threshold)
