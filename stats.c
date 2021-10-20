@@ -62,8 +62,6 @@ struct Stats compute_statistics(const float* numberset, int setlength)
     s.min =NAN;
     s.max = NAN; 
     s.average/=setlength;
-      #error "PRINT_DATA"
-    #error s.average
     return s;
     }
     
