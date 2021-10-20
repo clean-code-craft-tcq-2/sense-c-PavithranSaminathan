@@ -23,8 +23,8 @@ void ledAlerter(float Threshold,struct Stats computedStats)
 
 void check_and_alert(float max_Threshold, alerter_funcptr alerter[], struct Stats computedStats)
 {
-    alerters[0](max_Threshold,computedStats);
-    alerters[1](max_Threshold,computedStats);
+    alerter[0](max_Threshold,computedStats);
+    alerter[1](max_Threshold,computedStats);
 }
 struct Stats compute_statistics(const float* numberset, int setlength)
 {
@@ -50,6 +50,7 @@ struct Stats compute_statistics(const float* numberset, int setlength)
             average+=numberset[i];
         }
         average/=setlength;
+        alerter_funcptr alerters[] = {emailAlerter, ledAlerter};
         check_and_alert(maxThreshold,alerters,s);
         return s;
     }
