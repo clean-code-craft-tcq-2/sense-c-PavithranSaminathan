@@ -21,7 +21,7 @@ void ledAlerter(float Threshold,struct Stats computedStats)
 }
 
 
-void check_and_alert(float max_Threshold, alerter_funcptr alerters[], struct Stats computedStats)
+void check_and_alert(float max_Threshold, alerter_funcptr alerter[], struct Stats computedStats)
 {
     alerters[0](max_Threshold,computedStats);
     alerters[1](max_Threshold,computedStats);
