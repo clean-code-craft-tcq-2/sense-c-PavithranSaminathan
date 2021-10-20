@@ -32,9 +32,9 @@ struct Stats compute_statistics(const float* numberset, int setlength)
     //struct Stats s;
     int i;
     //float maxThreshold=10.5;
-    computedStats.average = NAN;
-    computedStats.min = NAN;
-    computedStats.max = NAN;
+    computedStats.average = 0;
+    computedStats.min = 0;
+    computedStats.max = 0;
     static float average=0;
     if(0 != setlength)
     {
@@ -57,6 +57,10 @@ struct Stats compute_statistics(const float* numberset, int setlength)
     }
     else
     {
+          computedStats.average = NAN;
+    computedStats.min = NAN;
+    computedStats.max = NAN;
+
         return computedStats;
     }
     
