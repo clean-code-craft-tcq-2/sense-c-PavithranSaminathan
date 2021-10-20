@@ -20,11 +20,10 @@ TEST_CASE("average is NaN for empty array") {
     struct Stats computedStats = compute_statistics(0, 0);
     //All fields of computedStats (average, max, min) must be
     //NAN (not-a-number), as defined in math.h
-    //REQUIRE(computedStats.min == nan);
-    //REQUIRE(computedStats.max == NAN);
-    //REQUIRE(computedStats.average == (float)nanf(""));
-     REQUIRE(isnan(computedStats.average));
-    //REQUIRE(computedStats.average == (float)nanf);
+   
+    REQUIRE(isnan(computedStats.average));
+    REQUIRE(isnan(computedStats.min));
+    REQUIRE(isnan(computedStats.max));
     
     //Design the REQUIRE statement here.
     //Use https://stackoverflow.com/questions/1923837/how-to-use-nan-and-inf-in-c
