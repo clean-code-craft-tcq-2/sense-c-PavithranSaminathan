@@ -35,7 +35,6 @@ struct Stats compute_statistics(const float* numberset, int setlength)
     s.average = 0;
     s.min = 0;
     s.max = 0;
-    static float average=0;
     if(0 != setlength)
     {
         for(i =0 ; i<setlength ; i++)
@@ -48,9 +47,9 @@ struct Stats compute_statistics(const float* numberset, int setlength)
             {
                 s.max= numberset[i];
             }
-            average+=numberset[i];
+            s.average+=numberset[i];
         }
-        average/=setlength;
+        s.average/=setlength;
         //alerter_funcptr alerters[] = {emailAlerter, ledAlerter};
         //check_and_alert(maxThreshold,alerters,s);
         return s;
