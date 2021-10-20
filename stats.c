@@ -3,7 +3,7 @@
 
 int emailAlertCallCount = 0;
 int ledAlertCallCount = 0;
-float maxThreshold=10.5;
+float maxThreshold=0;
 struct Stats computedStats;
 void emailAlerter(float Threshold,struct Stats computedStats)
 {
@@ -29,39 +29,38 @@ void check_and_alert(float max_Threshold, alerter_funcptr alerter[], struct Stat
 }
 struct Stats compute_statistics(const float* numberset, int setlength)
 {
-    //struct Stats s;
+    struct Stats s;
     int i;
     //float maxThreshold=10.5;
-    computedStats.average = 0;
-    computedStats.min = 0;
-    computedStats.max = 0;
+    s.average = 0;
+    s.min = 0;
+    s.max = 0;
     static float average=0;
     if(0 != setlength)
     {
         for(i =0 ; i<setlength ; i++)
         {
-            if(computedStats.min > numberset[i])
+            if(s.min > numberset[i])
             {
-                computedStats.min= numberset[i];
+                s.min= numberset[i];
             }
-            if(computedStats.max < numberset[i])
+            if(s.max < numberset[i])
             {
-                computedStats.max= numberset[i];
+                s.max= numberset[i];
             }
             average+=numberset[i];
         }
         average/=setlength;
         //alerter_funcptr alerters[] = {emailAlerter, ledAlerter};
         //check_and_alert(maxThreshold,alerters,s);
-        return computedStats;
+        return s;
     }
     else
     {
-          computedStats.average = NAN;
-    computedStats.min = NAN;
-    computedStats.max = NAN;
-
-        return computedStats;
+    s.average = NAN;
+    s.min = NAN;
+    s.max = NAN;
+    return s;
     }
     
 }
