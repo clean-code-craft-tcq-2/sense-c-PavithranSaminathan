@@ -32,9 +32,10 @@ struct Stats compute_statistics(const float* numberset, int setlength)
     struct Stats s;
     int i;
     //float maxThreshold=10.5;
-    s.average = 0;
+    
     if(numberset != NULL)
      {
+       s.average = 0;
        s.min = numberset[0];
        s.max = numberset[0];
       }
@@ -59,9 +60,9 @@ struct Stats compute_statistics(const float* numberset, int setlength)
     }
     else
     {
-    s.min =NAN;
+    s.min =nan;
     s.max = NAN; 
-    s.average=NAN;
+    s.average=nan;
     printf("d=%d",s.average);
     return s;
     }
