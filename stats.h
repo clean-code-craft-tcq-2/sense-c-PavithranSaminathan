@@ -3,7 +3,7 @@
 
 struct Stats
 {
- double average;
+ float average;
  float min;
  float max;
 };
