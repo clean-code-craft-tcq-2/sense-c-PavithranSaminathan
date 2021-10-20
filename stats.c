@@ -33,8 +33,8 @@ struct Stats compute_statistics(const float* numberset, int setlength)
     int i;
     //float maxThreshold=10.5;
     s.average = 0;
-    s.min = 0;
-    s.max = 0;
+    s.min = numberset[0];
+    s.max = numberset[0];
     if(0 != setlength)
     {
         for(i =0 ; i<setlength ; i++)
