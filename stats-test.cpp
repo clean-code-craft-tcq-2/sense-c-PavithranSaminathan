@@ -22,7 +22,7 @@ TEST_CASE("average is NaN for empty array") {
     //NAN (not-a-number), as defined in math.h
     //REQUIRE(computedStats.min == nan);
     //REQUIRE(computedStats.max == NAN);
-    REQUIRE(computedStats.average == nanf(""));
+    REQUIRE(computedStats.average == (float)nanf(""));
     //REQUIRE(computedStats.average == (float)nanf);
     
     //Design the REQUIRE statement here.
