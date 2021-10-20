@@ -17,7 +17,7 @@ void ledAlerter(float maxThreshold, struct Stats computedStats);
 
 alerter_funcptr alerters[] = {emailAlerter, ledAlerter};
 
-void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats);
+void check_and_alert(float maxThreshold, alerter_funcptr alerter[], struct Stats computedStats);
 
 extern int emailAlertCallCount;
 extern int ledAlertCallCount;
