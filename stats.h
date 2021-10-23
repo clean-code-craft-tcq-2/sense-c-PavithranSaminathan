@@ -1,7 +1,7 @@
 #ifndef stats_H
 #define stats_H
 
-#include "Alerter.h"
+
 struct Stats
 {
  float average;
