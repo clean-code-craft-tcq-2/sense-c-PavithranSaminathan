@@ -3,10 +3,6 @@
 #include "stdio.h"
 int emailAlertCallCount = 0;
 int ledAlertCallCount = 0;
-float maxThreshold=0;
-//struct Stats computedStats;
-
-
 
 void check_and_alert(float max_Threshold, alerter_funcptr alerter[], struct Stats computedStats)
 {
