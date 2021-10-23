@@ -5,21 +5,7 @@ int emailAlertCallCount = 0;
 int ledAlertCallCount = 0;
 float maxThreshold=0;
 //struct Stats computedStats;
-void emailAlerter(float Threshold,struct Stats computedStats)
-{
-  if(computedStats.max > Threshold)
-  {
-    emailAlertCallCount=1;
-  }
- }
 
-void ledAlerter(float Threshold,struct Stats computedStats)
-{
- if(computedStats.max > Threshold)
-  {
-   ledAlertCallCount=1;
-  }
-}
 
 
 void check_and_alert(float max_Threshold, alerter_funcptr alerter[], struct Stats computedStats)
